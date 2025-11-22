@@ -1,40 +1,37 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora</title>
-  <script src="index.js"></script>
+
+  <!-- Aqui importa o CSS -->
+  <link rel="stylesheet" href="Calculadora.css">
 </head>
 
 <body>
-  <button onclick="iniciarCalculadora()">
-    Iniciar calculadora
-  </button>
+  <div class="container">
+    <h2>Calculadora</h2>
 
-  <script>
-    function iniciarCalculadora() {
-      const valor1 = Number(prompt('Informe o primeiro valor'));
-      const condicional = prompt('Informe a condicional');
-      const valor2 = Number(prompt('Informe o segundo valor'));
+    <form id="formLogin" onsubmit="calcular(event)">
+      <label>Valor 1</label>
+      <input type="number" id="valor1">
 
-      switch (condicional) {
-        case '+':
-          alert(valor1 + valor2)
-          break
-        case '-':
-          alert(valor1 - valor2)
-          break
-        case '*':
-          alert(valor1 * valor2)
-          break
-        case '/':
-          alert(valor1 / valor2)
-          break
-      }
-    }
-  </script>
+      <label>Condicional</label>
+      <input type="text" id="condicional">
+
+      <label>Valor 2</label>
+      <input type="number" id="valor2">
+
+      <button type="submit">Calcular</button>
+    </form>
+
+    <div id="mensagem" class="mensagem"></div>
+  </div>
+
+  <!-- Aqui importa o JS -->
+  <script src="Calculadora.js"></script>
 </body>
 
 </html>
